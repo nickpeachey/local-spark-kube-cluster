@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "you will create kubernetes cluster and check it ..."
+echo "Creating kubernetes cluster and check it ..."
 
 kind create cluster --name airflow-cluster --config ./kind-cluster.yaml
 

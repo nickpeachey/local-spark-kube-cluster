@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "you will install Kubectl, KinD, Helm, docker and docker compose ..."
+echo "Installing Kubectl, KinD, Helm, docker and docker compose ..."
 
 brew install kubectl
 brew install kind
