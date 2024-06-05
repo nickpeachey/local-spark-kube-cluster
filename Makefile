@@ -44,6 +44,7 @@ forward:
 clean:
 	@echo "Cleaning up installation ..."
 	@helm uninstall ${HELM_NAME}
+	@kubectl config delete-cluster kind-${CLUSTER_NAME}
 
 load:
 	@echo "Building airflow image ..."
