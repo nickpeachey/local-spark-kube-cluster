@@ -43,7 +43,7 @@ forward:
 
 clean:
 	@echo "Cleaning up installation ..."
-	@helm uninstall ${SERVICE_NAME}
+	@helm uninstall ${HELM_NAME}
 
 load:
 	@echo "Building airflow image ..."
