@@ -1,0 +1,21 @@
+AFTER BUILD OF DAG DOCKER IMAGE
+
+kind load docker-image airflow-dags:0.0.4 --name airflow-cluster
+
+TO UPLOAD NEW RELEASE
+
+helm upgrade dev-release apache-airflow/airflow --namespace airflow --set images.airflow.repository=airflow-dags --set images.airflow.tag=0.0.3
+
+IF STARTING FROM BEGINING
+
+kind create cluster --name airflow-cluster
+
+kubectl cluster-info --context kind-airflow-cluster
+
+helm repo add apache-airflow https://airflow.apache.org
+
+kubectl create namespace airflow
+
+helm install dev-release apache-airflow --namespace airflow
+
+kubectl port-forward svc/dev-release-webserver 8080:8080 --namespace airflow
